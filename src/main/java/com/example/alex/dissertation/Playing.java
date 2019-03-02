@@ -17,15 +17,15 @@ import com.squareup.picasso.Picasso;
 
 public class Playing extends AppCompatActivity implements View.OnClickListener {
 
-    final static long INTERVAL = 1000; //1 sec
-    final static long TIMEOUT = 7000; //7 sec
-    int progressValue = 0;
+    //final static long INTERVAL = 1000; //1 sec
+   // final static long TIMEOUT = 7000; //7 sec
+   // int progressValue = 0;
 
-    CountDownTimer mCountDown;
+    //CountDownTimer mCountDown;
 
     int index=0, score=0,thisQuestion=0,totalQuestion,correctAnswer;
 
-    ProgressBar progressBar;
+    //ProgressBar progressBar;
     ImageView question_image;
     Button btnA,btnB,btnC,btnD;
     TextView txtScore,txtQuestionNum,question_text;
@@ -41,7 +41,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         question_text = (TextView)findViewById(R.id.question_text);
         question_image = (ImageView)findViewById(R.id.question_image);
 
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+     //   progressBar = (ProgressBar)findViewById(R.id.progressBar);
 
         btnA = (Button)findViewById(R.id.btnAnswerA);
         btnB = (Button)findViewById(R.id.btnAnswerB);
@@ -58,7 +58,7 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        mCountDown.cancel();
+       // mCountDown.cancel();
         if (index < totalQuestion) //still have question in list
         {
             Button clickedButton = (Button)view;
@@ -94,10 +94,19 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
         {
             thisQuestion++;
             txtQuestionNum.setText(String.format("%d / %d",thisQuestion,totalQuestion));
-            progressBar.setProgress(0);
-            progressValue=0;
+       //     progressBar.setProgress(0);
+        //    progressValue=0;
 
-            if(Common.questionList.get(index).getIsImageQuestion().equals("true"))
+            if(Common.questionList.get(index).getIsImageQuestion().equals("false"))
+            {
+                question_text.setText(Common.questionList.get(index).getQuestion());
+
+                //If question is text, we will set image to invisible
+                question_image.setVisibility(View.INVISIBLE);
+                question_text.setVisibility(View.VISIBLE);
+
+            }
+            else
             {
                 //If is image
                 Picasso.with(getBaseContext())
@@ -106,21 +115,13 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
                 question_image.setVisibility(View.VISIBLE);
                 question_text.setVisibility(View.INVISIBLE);
             }
-            else
-            {
-                question_text.setText(Common.questionList.get(index).getQuestion());
-
-                //If question is text, we will set image to invisible
-                question_image.setVisibility(View.INVISIBLE);
-                question_text.setVisibility(View.VISIBLE);
-            }
 
             btnA.setText(Common.questionList.get(index).getAnswerA());
             btnB.setText(Common.questionList.get(index).getAnswerB());
             btnC.setText(Common.questionList.get(index).getAnswerC());
             btnD.setText(Common.questionList.get(index).getAnswerD());
 
-            mCountDown.start(); //start timer
+         //   mCountDown.start(); //start timer
         }
         else
         {
@@ -143,20 +144,20 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
         totalQuestion = Common.questionList.size();
 
-        mCountDown = new CountDownTimer(TIMEOUT,INTERVAL) {
-            @Override
-            public void onTick(long millisUntilFinished) {
-                progressBar.setProgress(progressValue);
-                progressValue++;
+       // mCountDown = new CountDownTimer(TIMEOUT,INTERVAL) {
+        //    @Override
+      //      public void onTick(long millisUntilFinished) {
+       //         progressBar.setProgress(progressValue);
+       //         progressValue++;
 
-            }
+        //    }
 
-            @Override
-            public void onFinish() {
-                mCountDown.cancel();
-                showQuestion(++index);
-            }
-        };
+        //    @Override
+       //     public void onFinish() {
+            //    mCountDown.cancel();
+        //        showQuestion(++index);
+        //    }
+     //   };
         showQuestion(index);
     }
 }

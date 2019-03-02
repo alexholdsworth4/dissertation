@@ -6,7 +6,7 @@
     <item
         android:id="@+id/action_category"
         android:enabled="true"
-        android:title="Categories"
+        android:title="Quiz"
         android:icon="@drawable/ic_question_answer_black_24dp"
         app:showAsAction="ifRoom"/>
 
@@ -15,6 +15,13 @@
         android:enabled="true"
         android:title="Ranking"
         android:icon="@drawable/ic_star_black_24dp"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_walkthrough"
+        android:enabled="true"
+        android:title="Walkthrough"
+        android:icon="@drawable/ic_assignment_turned_in_black_24dp"
         app:showAsAction="ifRoom"/>
 
 </menu>
