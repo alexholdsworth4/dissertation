@@ -30,7 +30,7 @@
             android:layout_marginTop="8dp"
             android:background="#AD1457"
             android:foreground="?android:attr/selectableItemBackground"
-            android:text="PLAY"
+            android:text="START"
             android:textColor="@android:color/white"
             android:textStyle="bold"
             android:theme="@style/MyButton"

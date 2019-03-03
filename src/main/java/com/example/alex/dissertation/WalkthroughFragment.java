@@ -83,7 +83,7 @@ public class WalkthroughFragment extends Fragment {
                     public void onClick(View view, int position, boolean isLongClick) {
                         // Toast.makeText(getActivity(),String.format("%d|%s",adapter.getRef(position).getKey(),model.getName()), Toast.LENGTH_SHORT).show();
                         Intent startGame = new Intent(getActivity(),Start.class);
-                        Common.walkthroughId = adapter.getRef(position).getKey();
+                        Common.categoryId = adapter.getRef(position).getKey();
                         Common.walkthroughName = model.getName();
                         startActivity(startGame);
 

@@ -86,7 +86,6 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
             txtScore.setText(String.format("%d",score));
         }
-
     }
 
     private void showQuestion(int index) {
@@ -121,6 +120,19 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
             btnC.setText(Common.questionList.get(index).getAnswerC());
             btnD.setText(Common.questionList.get(index).getAnswerD());
 
+            if (Common.questionList.get(index).getAnswerA() == null)
+                btnA.setVisibility(View.GONE);
+                //txtScore.setVisibility(View.GONE);
+            if (Common.questionList.get(index).getAnswerB() == null)
+                btnB.setVisibility(View.GONE);
+               // txtScore.setVisibility(View.GONE);
+            if (Common.questionList.get(index).getAnswerC() == null)
+                btnC.setVisibility(View.GONE);
+                //txtScore.setVisibility(View.GONE);
+            if (Common.questionList.get(index).getAnswerD() == null)
+                btnD.setVisibility(View.GONE);
+                //txtScore.setVisibility(View.GONE);
+
          //   mCountDown.start(); //start timer
         }
         else
@@ -137,6 +149,8 @@ public class Playing extends AppCompatActivity implements View.OnClickListener {
 
         }
     }
+
+
 
     @Override
     protected void onResume() {

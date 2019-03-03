@@ -11,17 +11,18 @@
         app:showAsAction="ifRoom"/>
 
     <item
+        android:id="@+id/action_walkthrough"
+        android:enabled="true"
+        android:title="Walkthrough"
+        android:icon="@drawable/ic_assignment_turned_in_black_24dp"
+        app:showAsAction="ifRoom"/>
+
+    <item
         android:id="@+id/action_ranking"
         android:enabled="true"
         android:title="Ranking"
         android:icon="@drawable/ic_star_black_24dp"
         app:showAsAction="ifRoom"/>
 
-    <item
-        android:id="@+id/action_walkthrough"
-        android:enabled="true"
-        android:title="Walkthrough"
-        android:icon="@drawable/ic_assignment_turned_in_black_24dp"
-        app:showAsAction="ifRoom"/>
 
 </menu>
