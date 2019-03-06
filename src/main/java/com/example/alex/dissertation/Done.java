@@ -69,6 +69,16 @@ public class Done extends AppCompatActivity {
                                 Common.categoryId,
                                 Common.categoryName));
             }
+            if (totalQuestion == 8) {
+                question_score.child(String.format("%s_%s", Common.currentUser.getUserName(),
+                        Common.categoryId))
+                        .setValue(new QuestionScore(String.format("%s_%s", Common.currentUser.getUserName(),
+                                Common.categoryId),
+                                Common.currentUser.getUserName(),
+                                String.valueOf(score),
+                                Common.categoryId,
+                                Common.lessonName));
+            }
             else {
                 question_score.child(String.format("%s_%s", Common.currentUser.getUserName(),
                         Common.categoryId))

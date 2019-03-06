@@ -8,6 +8,7 @@
         android:enabled="true"
         android:title="Quiz"
         android:icon="@drawable/ic_question_answer_black_24dp"
+        app:labelVisibilityMode="labeled"
         app:showAsAction="ifRoom"/>
 
     <item
@@ -15,6 +16,15 @@
         android:enabled="true"
         android:title="Walkthrough"
         android:icon="@drawable/ic_assignment_turned_in_black_24dp"
+        app:labelVisibilityMode="labeled"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_lesson"
+        android:enabled="true"
+        android:title="Lesson"
+        android:icon="@drawable/ic_school_black_24dp"
+        app:labelVisibilityMode="labeled"
         app:showAsAction="ifRoom"/>
 
     <item
@@ -22,6 +32,7 @@
         android:enabled="true"
         android:title="Ranking"
         android:icon="@drawable/ic_star_black_24dp"
+        app:labelVisibilityMode="labeled"
         app:showAsAction="ifRoom"/>
 
 

@@ -9,6 +9,7 @@ import java.util.List;
 public class Common {
     public static String categoryId,categoryName;
     public static String walkthroughId,walkthroughName;
+    public static String lessonId,lessonName;
 
     public static User currentUser;
 
